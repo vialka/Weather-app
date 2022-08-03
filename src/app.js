@@ -58,7 +58,6 @@ function showWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#sky").innerHTML =
     response.data.weather[0].description;
-  console.log(response);
 }
 
 // Opens the city that I specified
@@ -88,8 +87,6 @@ form.addEventListener("submit", search);
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-  console.log(latitude);
-  console.log(longitude);
   let apiKey = "4a8e2f6facdabec0ff87798adbd38ad7";
   let apiNew = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiNew).then(showWeather);
