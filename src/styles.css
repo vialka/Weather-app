@@ -27,7 +27,7 @@ h5 {
 .first {
   display: block;
   margin-bottom: 0;
-  margin-top: 100px;
+  margin-top: 150px;
   max-width: 900px;
 }
 .second {
@@ -76,4 +76,8 @@ h5 {
 
 .btn-success {
   margin-left: 30px;
+}
+
+.background {
+  width: 20%;
 }
