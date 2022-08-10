@@ -23,6 +23,18 @@ let currentDay = days[now.getDay()];
 let h2 = document.querySelector(".currentDay");
 h2.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 
+// Show searching day and data in the searching city
+/*function FormatData(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  return ` ${hours}:${minutes}`;
+}
+
+document.querySelector("#currentdata").innerHTML = FormatData(
+  response.data.dt * 1000
+);
+*/
 // Changing Celsius and Fahrengate
 
 function convertF(event) {
