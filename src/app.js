@@ -19,6 +19,7 @@ let days = [
   "Saturday",
 ];
 let currentDay = days[now.getDay()];
+
 let h2 = document.querySelector(".currentDay");
 h2.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 
@@ -58,6 +59,12 @@ function showWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#sky").innerHTML =
     response.data.weather[0].description;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 // Opens the city that I specified
