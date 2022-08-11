@@ -47,8 +47,9 @@ function convertS(event) {
   event.preventDefault();
   let tempNew = document.querySelector("#temperature");
   tempNew.innerHTML = Math.round(celsiusTemp);
-  fahrengate.classList.remove("active");
+
   celsius.classList.add("active");
+  fahrengate.classList.remove("active");
 }
 
 let fahrengate = document.querySelector("#fara");
