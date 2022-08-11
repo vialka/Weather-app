@@ -1,5 +1,3 @@
-// Show current Day and Time
-
 let now = new Date();
 let currentHours = now.getHours();
 if (currentHours < 10) {
@@ -41,12 +39,16 @@ function convertF(event) {
   event.preventDefault();
   let tempNew = document.querySelector("#temperature");
   tempNew.innerHTML = Math.round(celsiusTemp * 1.8 + 32);
+  celsius.classList.remove("active");
+  fahrengate.classList.add("active");
 }
 
 function convertS(event) {
   event.preventDefault();
   let tempNew = document.querySelector("#temperature");
   tempNew.innerHTML = Math.round(celsiusTemp);
+  fahrengate.classList.remove("active");
+  celsius.classList.add("active");
 }
 
 let fahrengate = document.querySelector("#fara");
@@ -124,6 +126,6 @@ function current() {
 let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", current);
 
-searchCity("Kyiv");
+searchCity("Paris");
 
 // https://codesandbox.io/s/admiring-ramanujan-w40dt1?file=/src/app.js

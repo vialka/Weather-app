@@ -86,3 +86,8 @@ img {
 .background {
   width: 20%;
 }
+.active {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
