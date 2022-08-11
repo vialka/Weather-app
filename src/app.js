@@ -40,15 +40,13 @@ document.querySelector("#currentdata").innerHTML = FormatData(
 function convertF(event) {
   event.preventDefault();
   let tempNew = document.querySelector("#temperature");
-  let temperature = tempNew.innerHTML;
-  tempNew.innerHTML = Math.round(temperature * 1.8 + 32);
+  tempNew.innerHTML = Math.round(celsiusTemp * 1.8 + 32);
 }
 
 function convertS(event) {
   event.preventDefault();
   let tempNew = document.querySelector("#temperature");
-  let temperature = tempNew.innerHTML;
-  tempNew.innerHTML = Math.round((temperature - 32) / 1.8);
+  tempNew.innerHTML = Math.round(celsiusTemp);
 }
 
 let fahrengate = document.querySelector("#fara");
@@ -81,8 +79,11 @@ function showWeather(response) {
     "alt",
     `http://openweathermap.org/img/wn/${response.data.weather[0].description}@2x.png`
   );
+
+  celsiusTemp = Math.round(response.data.main.temp);
 }
 
+let celsiusTemp = null;
 // Opens the city that I specified
 function searchCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
