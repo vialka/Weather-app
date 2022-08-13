@@ -21,6 +21,30 @@ let currentDay = days[now.getDay()];
 let h2 = document.querySelector(".currentDay");
 h2.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class = "row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class = "col-2">
+      <div class = "date">
+        ${day}
+      </div>
+      <img src = "http://openweathermap.org/img/wn/01d@2x.png" alt="icons" width="45" />
+      <div class ="forecast-temp">
+      <span class = "temp-max"> 18°</span> 
+      <span class ="temp-min"> 15°</span>
+    </div>
+    </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Show searching day and data in the searching city
 /*function FormatData(timestamp) {
   let date = new Date(timestamp);
@@ -128,5 +152,6 @@ let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", current);
 
 searchCity("Paris");
+displayForecast();
 
 // https://codesandbox.io/s/admiring-ramanujan-w40dt1?file=/src/app.js
