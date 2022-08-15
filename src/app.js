@@ -21,7 +21,8 @@ let currentDay = days[now.getDay()];
 let h2 = document.querySelector(".currentDay");
 h2.innerHTML = `${currentDay} ${currentHours}:${currentMinutes}`;
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class = "row">`;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
@@ -82,6 +83,14 @@ fahrengate.addEventListener("click", convertF);
 let celsius = document.querySelector("#cels");
 celsius.addEventListener("click", convertS);
 
+function getForecast(coords) {
+  console.log(coords);
+  let apiKey = "4a8e2f6facdabec0ff87798adbd38ad7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
+
 // Serching City= cheng weather on page
 
 function showWeather(response) {
@@ -108,6 +117,7 @@ function showWeather(response) {
   );
 
   celsiusTemp = Math.round(response.data.main.temp);
+  getForecast(response.data.coord);
 }
 
 let celsiusTemp = null;
@@ -115,6 +125,7 @@ let celsiusTemp = null;
 function searchCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
   axios.get(apiUrl).then(showWeather);
 }
 
@@ -152,6 +163,5 @@ let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", current);
 
 searchCity("Paris");
-displayForecast();
 
 // https://codesandbox.io/s/admiring-ramanujan-w40dt1?file=/src/app.js
