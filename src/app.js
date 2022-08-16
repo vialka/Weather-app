@@ -46,7 +46,7 @@ function displayForecast(response) {
       </div>
       <img src = "http://openweathermap.org/img/wn/${
         forecastDay.weather[0].icon
-      }@2x.png" alt="icons" width="45" />
+      }@2x.png" alt="icons" width="65" />
       <div class ="forecast-temp">
       <span class = "temp-max">  ${Math.round(forecastDay.temp.max)}°</span> 
       <span class ="temp-min"> ${Math.round(forecastDay.temp.min)}°</span>
