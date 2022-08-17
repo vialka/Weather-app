@@ -40,7 +40,7 @@ function displayForecast(response) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class = "col-2">
+        ` <div class = "col-2">
       <div class = "date">
         ${formatDay(forecastDay.dt)}
       </div>
@@ -52,6 +52,7 @@ function displayForecast(response) {
       <span class ="temp-min"> ${Math.round(forecastDay.temp.min)}°</span>
     </div>
     </div>
+   
   `;
     }
   });
@@ -175,6 +176,6 @@ function current() {
 let currentButton = document.querySelector("#current-weather");
 currentButton.addEventListener("click", current);
 
-searchCity("Paris");
+searchCity("Kyiv");
 
 // https://codesandbox.io/s/admiring-ramanujan-w40dt1?file=/src/app.js
