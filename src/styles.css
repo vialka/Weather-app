@@ -85,9 +85,6 @@ h5 {
   margin-left: 30px;
 }
 
-.background {
-  width: 20%;
-}
 .active {
   color: black;
   text-decoration: none;
@@ -116,4 +113,25 @@ h5 {
 
 .temp-min {
   opacity: 0.6;
+}
+
+.video {
+  position: relative;
+  padding-bottom: 15%;
+}
+
+.media {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.coder {
+  position: absolute;
+}
+
+.body-group {
+  margin-top: -300px;
 }
